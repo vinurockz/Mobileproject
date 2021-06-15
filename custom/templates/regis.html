@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{%extends "mains.html"%}
+{%block body_block%}
+<form method="post" style="color:black; ">
+    {%csrf_token%}
+   <strong style="text-align:left;"> {{form.as_p}}</strong>
+    <input type="submit" class="btn btn-primary" value="SignUp">
+</form>
+{% endblock %}

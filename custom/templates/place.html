@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{%extends "mobiledetailes.html"%}
+{%block body_block%}
+<form method="post" >
+  {%csrf_token%}
+  {{form.as_p}}
+  <input type="submit" value="PlaceOreder">
+    </form>
+{% endblock %}

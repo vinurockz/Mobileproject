@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%extends "index.html"%}
+{%block body_block%}
+{%for list in lists%}
+{%csrf_token%}
+<div class="card" style=" background-color:#dcebd5; position:relative; width:250px; border-radius:3px; border:2px solid black; height:300px; float:left; margin-top:50px; margin-left:20px; ">
+  <img src="{{list.image.url}}" alt="" width="100px" height="100px" style="position:absolute; top:0px; right:0px;">
+    <div class="card-body" style="position:relative; top:20px; left:3px;">
+    <h5 class="card-title" style="font-size:20px;"><strong>{{ist.mobile_name}}</strong></h5>
+      <h6 ><strong>{{list.brand_name}}  (Brand)</strong></h6>
+
+    <p class="card-text"><strong>Spec Details:</strong><br>{{list.spec}}</p>
+      <p class="card-text"><strong>Price:{{list.price}}</strong></p>
+
+<a href="{%url 'edited' list.id %}"  class="btn btn-primary">Update</a>
+        <a href="{%url 'deleted' list.id %}"  class="btn btn-primary">Delete</a>
+  </div>
+
+</div>
+{%endfor%}
+
+
+{%endblock%}

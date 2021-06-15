@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%extends "mobiledetailes.html"%}
+{%block body_block%}
+<h2>MyCart</h2>
+
+
+<div class="container" >
+   {%for order in item%}
+    <div class="row" >
+
+
+
+            <div class="card" style=" background-color:#dcebd5; position:relative; width:100%; border-radius:3px; border:2px solid black; height:300px; float:left; margin-top:50px; margin-left:20px; ">
+  <img src="{{order.product.image.url}}" alt="" width="220px" height="250px" style="border:3px solid black; position:absolute; left:30px; top:30px; ">
+    <div class="card-body" style="position:relative; top:20px; left:300px;">
+    <h5 class="card-title" style="font-size:20px;"><strong>{{order.product.mobile_name}}</strong></h5>
+      <h6 ><strong>{{order.product.brand_name}}  (Brand)</strong></h6>
+
+    <p class="card-text"><strong>Spec Details:</strong><br>{{order.product.spec}}</p>
+      <p class="card-text"><strong>Price:{{order.product.price}}</strong></p>
+
+
+
+
+
+<a href="{%url 'placed' order.product.id%}"  class="btn btn-primary">PlaceOrder</a>
+        <a href="{%url 'rmcarted' order.id %}"  class="btn btn-primary">Remove</a>
+
+
+
+
+
+
+  </div>
+
+</div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}
